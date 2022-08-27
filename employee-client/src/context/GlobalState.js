@@ -20,7 +20,10 @@ export const createAction = (type, payload) => ({
 // Provider Component
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  /* common funcation no use of action creators */
   //const actionDispatch = (type, payload) =>  dispatch(createAction(type, payload));
+  
 
   // Actions
   const removeUser = (id) => {
@@ -58,8 +61,10 @@ export const GlobalProvider = ({ children }) => {
       addUser,
       editUser,
       userList,
+      dispatch,
+      //actionDispatch
+      //state
       webfox,
-      dispatch
     }}>
       {children}
     </GlobalContext.Provider>
