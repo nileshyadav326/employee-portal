@@ -1,7 +1,4 @@
-import sequelize from '../../utils/db';
 import employeeModel from './employeemodel';
-import Sequelize from 'sequelize';
-const Op = Sequelize.Op;
 
 module.exports.addEmployee = (input) => {
     return new Promise((resolve, reject) => {
@@ -27,8 +24,9 @@ module.exports.updateEmployee = (input, callback) => {
             individualHooks: true
         }).then( data => {
             employeeModel.findAll({
-                    attributes: ['id','name','age','dob','address','photo','updatedAt'],
-                    raw: false
+                where: {
+                    id: input.id,
+                }
                 })
                 .then((result) => {
                     resolve(result);

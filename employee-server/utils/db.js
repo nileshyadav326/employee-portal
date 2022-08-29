@@ -56,7 +56,7 @@ const sequelize = new Sequelize(config.DBNAME, config.DBUSER, config.DBPWD, {
         timestamps: true
     },
     logging: false,
-    operatorsAliases
+    //operatorsAliases
 });
 
 sequelize

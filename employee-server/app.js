@@ -9,7 +9,6 @@ import employeeModule from './modules/employee/router';
 const app = express();
 
 
-app.set('case sensitive routing', true);
 app.set('env', config.ENV);
 app.set('port', config.PORT);
 
